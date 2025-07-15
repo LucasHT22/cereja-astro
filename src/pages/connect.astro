@@ -1,0 +1,22 @@
+---
+const success = Astro.url.searchParams.get('ok') === '1';
+const error = Astro.url.searchParams.get('error');
+
+import Main from "../layouts/Main.astro";
+---
+
+<Main>
+    <h1>Connect tp Data Base:</h1>
+
+    <form method="POST" action="/api/try-connection">
+        <label>Host: <input name="host" required /></label>
+        <label>Port: <input name="port" /></label>
+        <label>User: <input name="user" required /></label>
+        <label>Password: <input type="password" name="password" required/></label>
+        <label>Database: <input name="database" required /></label>
+        <button type="submit">Try and Connect</button>
+    </form>
+
+    {success && <div class="message" style="color:green;">Success!</div>}
+    {error && <div class="message" style="color:red;">Error: {error}</div>}
+</Main>

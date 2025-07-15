@@ -21,11 +21,35 @@
 				margin-left: 10%;
 				margin-top: 10%;
 			}
+			h1 {
+				font-size: 5rem;
+				position: relative;
+				display: inline-block;
+			}
+			h1::after {
+				content: 'Cereja means cherry in Portuguese';
+				position: relative;
+				left: 0;
+				top: 100%;
+				right: 10px;
+				white-space: nowrap;
+				background-color: #ffa5a5;
+				color: #a4003d;
+				padding: 7px 10px;
+				border-radius: 5px;
+				font-size: 1rem;
+				opacity: 0;
+				transition: opacity 0.3s ease;
+			}
+			h1:hover::after {
+				opacity: 1;
+			}
 		</style>
 		<div class="main">
 			<h2>Welcome to</h2>
 			<h1><b><i>Cereja</i></b></h1>
 			<h3>The missing cherry on top of your library.</h3>
+			<a href="/login">Sign In</a>
 		</div>
 	</body>
 </html>
